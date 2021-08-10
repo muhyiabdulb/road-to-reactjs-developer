@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function RecipeTitle() {
-    const title = 'Mashed potatoes'
-    return (
-        <h2>{title}</h2>
+// TODO: Create RecipeTitle component
+function RecipeTitle(props) {
+    return(
+        <section>
+            <h2>{ props.title }</h2>
+        </section>
     )
 }
 
-export default RecipeTitle  
+export default RecipeTitle
