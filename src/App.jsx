@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RecipeTitle from './RecipeTitle'
 import './index.css'
 import IngredientList from './IngredientList'
@@ -6,7 +6,7 @@ import StepsList from './Challenge';
 
 function App(){
     // TODO: Add recipe object
-    const recipe = {
+    const initialRecipe = {
         title: 'Mashed potatoes',
         feedback: {
             rating: 4.8,
@@ -31,11 +31,14 @@ function App(){
         ]
     }
 
+    const [recipe, setRecipe] = useState(initialRecipe)
+    
+
     return (
         <article>
             <h1>Recipe Manager</h1>
             {/* TODO: Add RecipeTitle component */}
-            <RecipeTitle title={ recipe.title }  feedback={ recipe.feedback } />
+            <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
             {/* TODO: Add IngredientList component */}
             <IngredientList ingredients={recipe.ingredients} />
             <h3>Steps : </h3>
