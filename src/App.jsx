@@ -43,11 +43,21 @@ function App(){
         <article>
             <h1>Recipe Manager</h1>
             {/* TODO: Add RecipeTitle component */}
-            <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
+            <RecipeTitle 
+            // props (property)
+            title={recipe.title} 
+            feedback={recipe.feedback} />
+
             {/* TODO: Add IngredientList component */}
-            <IngredientList ingredients={recipe.ingredients} onClick={ingredientClick} />
+            <IngredientList 
+            // props (property)
+            ingredients={recipe.ingredients} 
+            click={ingredientClick} />
+            
             <h3>Steps : </h3>
-            <StepsList steps={ recipe.steps }/>
+            <StepsList 
+             // props (property)
+            steps={ recipe.steps }/>
         </article>
     )
 }

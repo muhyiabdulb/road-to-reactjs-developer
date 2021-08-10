@@ -9,7 +9,7 @@ function IngredientsList(props) {
             // Return the desired HTML for each ingredient
             className={ingredient.prepared ? 'prepared' : ''} 
             // TODO: Add onClick event
-            onClick={() => props.onClick(index)}>
+            onClick={() => props.click(index)}>
                 {ingredient.name}
             </li>
         )
