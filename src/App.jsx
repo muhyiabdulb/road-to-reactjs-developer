@@ -18,12 +18,12 @@ function App(){
             { name: 'Pepper', prepared: false },
         ]
     }
-    
+
     return (
         <article>
             <h1>Recipe Manager</h1>
             {/* TODO: Add RecipeTitle component */}
-            <RecipeTitle title={ recipe.title } />
+            <RecipeTitle title={ recipe.title }  feedback={ recipe.feedback } />
             {/* TODO: Add IngredientList component */}
 
         </article>
