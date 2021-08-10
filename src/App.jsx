@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import RecipeTitle from './RecipeTitle'
 import './index.css'
 import IngredientList from './IngredientList'
 import StepsList from './Challenge';
 
 function App(){
-    // TODO: Add recipe object
+    // TODO: Add initialRecipe object
     const initialRecipe = {
         title: 'Mashed potatoes',
         feedback: {
@@ -31,13 +31,23 @@ function App(){
         ]
     }
 
-    const [recipe, setRecipe] = useState(initialRecipe)
-    
+    // TODO: Create recipe state
+    const [ recipe, setRecipe ] = useState(initialRecipe);
+
+    // TODO: Add new state property
+    const [ prepared, setPrepared ] = useState(false);
+
+    // TODO: Create ingredientClick event listener
     function ingredientClick(index) {
-        const updateRecipe = {... recipe}
-        updateRecipe.ingredients[index].prepared = !updateRecipe.ingredients[index].prepared
-        setRecipe(updateRecipe)    
+        const updatedRecipe = { ... recipe };
+        updatedRecipe.ingredients[index].prepared = !updatedRecipe.ingredients[index].prepared;
+        setRecipe(updatedRecipe);
     }
+
+    // TODO: Add the effect hook
+    useEffect(() => {
+        setPrepared(recipe.ingredients.every(i => i.prepared));
+    }, [recipe]);
 
     return (
         <article>
@@ -53,7 +63,10 @@ function App(){
             // props (property)
             ingredients={recipe.ingredients} 
             click={ingredientClick} />
-            
+
+            {/* TODO: Add the prep work display */}
+            { prepared ? <h2>Prep work done!</h2> : <h2>Just keep chopping.</h2>}
+
             <h3>Steps : </h3>
             <StepsList 
              // props (property)
