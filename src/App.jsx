@@ -33,6 +33,11 @@ function App(){
 
     const [recipe, setRecipe] = useState(initialRecipe)
     
+    function ingredientClick(index) {
+        const updateRecipe = {... recipe}
+        updateRecipe.ingredients[index].prepared = !updateRecipe.ingredients[index].prepared
+        setRecipe(updateRecipe)    
+    }
 
     return (
         <article>
@@ -40,7 +45,7 @@ function App(){
             {/* TODO: Add RecipeTitle component */}
             <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
             {/* TODO: Add IngredientList component */}
-            <IngredientList ingredients={recipe.ingredients} />
+            <IngredientList ingredients={recipe.ingredients} onClick={ingredientClick} />
             <h3>Steps : </h3>
             <StepsList steps={ recipe.steps }/>
         </article>
