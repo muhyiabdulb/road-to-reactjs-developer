@@ -1,6 +1,7 @@
 import React from 'react'
 import RecipeTitle from './RecipeTitle'
 import './index.css'
+import IngredientList from './IngredientList'
 
 function App(){
     // TODO: Add recipe object
@@ -25,7 +26,7 @@ function App(){
             {/* TODO: Add RecipeTitle component */}
             <RecipeTitle title={ recipe.title }  feedback={ recipe.feedback } />
             {/* TODO: Add IngredientList component */}
-
+            <IngredientList ingredients={recipe.ingredients} />
         </article>
     )
 }
